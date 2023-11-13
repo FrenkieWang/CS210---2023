@@ -1,0 +1,92 @@
+https://zhuanlan.zhihu.com/p/193140870
+
+一、设置SSH密钥
+cd ~/.ssh
+
+ssh-keygen -t rsa -C "frenkiewang21@gmail.com"
+1）是路径确认，直接按回车存默认路径即可
+
+2）直接回车键，这里我们不使用密码进行登录, 用密码太麻烦;
+
+3）直接回车键
+
+验证是否生成SSH？
+ls
+看看是否会返回 id_rsa.pub 公钥 
+
+在以下文件里也能找到公钥
+C:\Users\Y\ .ssh
+
+打开Github
+右上角-> Settings -> SSH and GPG Keys -> Add SSH key
+复制 id_rsa.pub 中的所有内容 + 输入Title  -> Add SSH key
+
+二、上传本地项目到github
+1）创建一个本地项目
+2）进入本地项目 
+cd "[项目地址]"
+3) 把这个目录变成git可以管理的仓库
+git init
+运行好以后 文件夹会多出一个 隐藏的 .git 文件夹
+4）把所有文件添加到仓库
+git add .
+5) 将文件提交到仓库，并且注释
+git commit -m "[注释内容]"
+6）关联github仓库
+Github创建新的项目 -> Code -> 选中SSH -> 复制SSH网址
+git remote add origin [项目SSH网址]
+7）上传本地代码
+git push -u origin master
+yes 确定 回车
+上传代码完毕
+如果这一步不行，纳闷额输入
+git push -u origin master -f
+
+三、更新本地项目到github
+1）切换工作目录
+cd "[项目地址]"
+2) 切换工作分支
+git checkout [branchname]
+3) 把所有文件添加到仓库
+git add .
+4) 将文件提交到仓库，并且注释
+git commit -m "[注释内容]"
+5) 更新文件 
+git push
+
+四、笔记
+~ 表示当前用户的主目录，而 ~/.ssh 则表示该用户的 SSH 目录。
+比如我的用户主目录是 C:\Users\frenk\.ssh
+SSH（Secure Shell）是一种用于在网络上安全传输数据的协议，通常用于远程登录和执行命令。在 SSH 中，密钥对（公钥和私钥）用于进行身份验证和安全通信。
+id_rsa: 私钥文件，用于用户身份验证。
+id_rsa.pub: 公钥文件，用于与其他系统共享，以便进行身份验证。
+known_hosts: 包含已知主机的列表及其对应的密钥。
+----------------------------
+
+-t 
+-t选项通常用于指定一个标签（tag）。标签是Git中用于标识特定提交的名称，通常用于表示软件版本号或里程碑
+-c
+-c选项用于设置配置选项（configurations）
+--------------------------
+
+git remote add <remote_name> <remote_url>
+将远程仓库地址<remote_url>添加到当前的 Git 仓库中，
+并为该远程仓库指定一个简短的名字<remote_name> （通常使用 origin）
+
+<remote_name> 是给远程仓库起的一个简短的名字，通常使用 origin。
+<remote_url> 是远程仓库的 URL 地址，可以是 HTTPS 或者 SSH 协议的地址。
+
+--------------------
+git push -u origin master 的作用是
+将本地的 master 分支推送到远程仓库（通常是名为 origin 的远程仓库），并将本地的 master 分支与远程的 master 分支关联起来。
+、
+git push: 这是将本地提交推送到远程仓库的 Git 命令。
+-u origin master: 这部分含义是将当前分支（master 分支）与远程仓库（origin）的对应分支关联起来。
+-u 选项通常用于在推送的同时将本地分支和远程分支关联起来，这样后续可以直接使用 git push 和 git pull，而不必指定远程和分支
+
+
+SSH（Secure Shell）是一种用于在计算机网络上进行加密通信的网络协议。
+它主要用于通过不安全的网络（如互联网）安全地进行远程登录和执行命令。
+
+RSA（Rivest-Shamir-Adleman）是一种非对称加密算法，
+由Ron Rivest、Adi Shamir和Leonard Adleman于1977年共同提出。RSA是目前广泛使用的公钥密码体系之一。
