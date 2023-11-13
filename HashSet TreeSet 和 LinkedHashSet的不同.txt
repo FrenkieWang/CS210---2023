@@ -1,0 +1,29 @@
+TreeSet, LinkedHashSet, 和 HashSet 都是Java中实现了Set接口的类，它们都用于存储一组不重复的元素。然而，它们在内部实现和行为上有一些不同。
+
+1）HashSet:
+	Set<String> hashSet = new HashSet<>();
+HashSet基于哈希表实现。
+不保证元素的顺序，因此遍历顺序可能会不同。
+添加、删除和查找元素的时间复杂度通常是常数时间 O(1)，但在极端情况下可能会变为O(n)。
+适用于快速查找，不关心元素的顺序。
+
+2）LinkedHashSet:
+	Set<String> linkedHashSet = new LinkedHashSet<>();
+LinkedHashSet继承自HashSet，在内部使用链表维护元素的顺序。
+保留了元素插入的顺序，因此遍历顺序与插入顺序一致。
+添加、删除和查找元素的时间复杂度通常是常数时间 O(1)。
+适用于需要保留插入顺序的场景。
+
+3) TreeSet:
+	Set<String> treeSet = new TreeSet<>();
+TreeSet基于红黑树（Red-Black Tree）实现。
+元素按照自然顺序或者指定的比较器进行排序。
+添加、删除和查找元素的时间复杂度是 O(log n)。
+适用于需要元素有序的场景。
+
+--------
+总的来说，选择使用哪个取决于你的需求：
+
+如果你需要一个快速的集合，不关心元素的顺序，使用 HashSet。
+如果你需要保留插入顺序，使用 LinkedHashSet。
+如果你需要一个有序的集合，可以使用 TreeSet。但要注意，由于其有序性，性能上可能不如 HashSet 或 LinkedHashSet。
