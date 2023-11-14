@@ -1,0 +1,22 @@
+
+在Java中，你可以使用以下几种方法将字符转换为整数：
+
+1） 使用 Character.getNumericValue(char) 方法：
+	char ch = '5';
+	int intValue = Character.getNumericValue(ch);
+	System.out.println("Character to Integer: " + intValue);
+
+2）使用类型转换（强制类型转换）：
+	char ch = '5';
+	int intValue = (int) ch - '0';
+	System.out.println("Character to Integer: " + intValue);
+
+3）使用 Integer.parseInt(String.valueOf(char))：
+	char ch = '5';
+	int intValue = Integer.parseInt(String.valueOf(ch));
+	System.out.println("Character to Integer: " + intValue);
+
+第一种方法直接使用了 Character.getNumericValue(char) 方法，它会返回字符的数值表示。
+第二种方法利用了字符的ASCII码值，通过减去字符 '0' 的ASCII码值实现了字符到整数的转换。
+第三种方法将字符转换为字符串，然后使用 Integer.parseInt() 方法将字符串转换为整数。
+
