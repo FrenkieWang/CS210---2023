@@ -23,24 +23,28 @@ C:\Users\Y\ .ssh
 
 二、上传本地项目到github
 1）创建一个本地项目
-2）进入本地项目 
+2）进入本地项目的地址 
 cd "[项目地址]"
 3) 把这个目录变成git可以管理的仓库
 git init
 运行好以后 文件夹会多出一个 隐藏的 .git 文件夹
-4）把所有文件添加到仓库
+4）把当前目录下所有增加、修改、删除文件添加到本地git的暂存区（Staging Area）
 git add .
-5) 将文件提交到仓库，并且注释
+5) 将已暂存（Staging Area）的文件，提交到Git本地版本库(Local Repository)，并注释
 git commit -m "[注释内容]"
-6）关联github仓库
+6）将远程仓库的地址，添加到本地 Git 仓库的配置，远程分支为origin
 Github创建新的项目 -> Code -> 选中SSH -> 复制SSH网址
 git remote add origin [项目SSH网址]
-7）上传本地代码
+7）将本地仓库的变更推送到远程仓库，设置默认的远程仓库和分支
 git push -u origin master
 yes 确定 回车
 上传代码完毕
 如果这一步不行，纳闷额输入
 git push -u origin master -f
+
+-u 在推送的同时，将本地的 master 分支与远程的 master 分支关联起来
+origin： 这是远程仓库的名称
+master： 这是要推送的本地分支的名称
 
 三、更新本地项目到github
 1）切换工作目录
@@ -79,7 +83,7 @@ git remote add <remote_name> <remote_url>
 --------------------
 git push -u origin master 的作用是
 将本地的 master 分支推送到远程仓库（通常是名为 origin 的远程仓库），并将本地的 master 分支与远程的 master 分支关联起来。
-、
+
 git push: 这是将本地提交推送到远程仓库的 Git 命令。
 -u origin master: 这部分含义是将当前分支（master 分支）与远程仓库（origin）的对应分支关联起来。
 -u 选项通常用于在推送的同时将本地分支和远程分支关联起来，这样后续可以直接使用 git push 和 git pull，而不必指定远程和分支
