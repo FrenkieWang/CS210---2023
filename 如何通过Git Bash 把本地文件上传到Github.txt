@@ -32,13 +32,14 @@ git init
 git add .
 5) 将已暂存（Staging Area）的文件，提交到Git本地版本库(Local Repository)，并注释
 git commit -m "[注释内容]"
-6）将远程仓库的地址，添加到本地 Git 仓库的配置，远程分支为origin
+6）将远程仓库的地址，添加到本地 Git 仓库的配置中，远程分支为origin
 Github创建新的项目 -> Code -> 选中SSH -> 复制SSH网址
 git remote add origin [项目SSH网址]
 7）将本地仓库的变更推送到远程仓库，设置默认的远程仓库和分支
 git push -u origin master
 yes 确定 回车
 上传代码完毕
+
 如果这一步不行，纳闷额输入
 git push -u origin master -f
 
