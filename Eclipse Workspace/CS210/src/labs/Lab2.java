@@ -22,6 +22,8 @@ public class Lab2 {
 				checkDigit2 = checkDigit2 + luhnAlgorithm(digit);
 			}
 		}		
+		
+		// Check whether total modulo 10 equals 0?
 		int sum = checkDigit1 + checkDigit2;
 		if(sum % 10 == 0) {
 			System.out.println("VALID");

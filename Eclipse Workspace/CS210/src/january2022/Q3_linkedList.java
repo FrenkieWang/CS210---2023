@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 
-public class Q3_linkedList {
+public class Q3_LinkedList {
 	public static void main (String args[]) {  
         Scanner scanner = new Scanner(System.in);
 		LinkedList <String> priorityQueue = new LinkedList<String>();

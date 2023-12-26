@@ -30,5 +30,4 @@ public class Q2 {
 		// Round up to the nearest Integer 93.75 -> 94
 		System.out.println(Math.round(p));
 	}
-
 }

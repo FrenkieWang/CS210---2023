@@ -21,18 +21,13 @@ public class Q3 {
 			//POP Commands
 			if(inputLine.toUpperCase().equals("POP")) {
 				//When stack is empty, nothing happens.
-				if(s.empty()) {
-					break;
-				}
-				else {
-					s.pop();
-				}
+				if(!s.isEmpty()) s.pop();
 			}
 		}
 		sc.close();
 		
 		// If stack is empty, then output "empty"
-		if(s.empty()) {
+		if(s.isEmpty()) {
 			System.out.println("empty");
 		}// output the Integer at the top of the stack
 		else {

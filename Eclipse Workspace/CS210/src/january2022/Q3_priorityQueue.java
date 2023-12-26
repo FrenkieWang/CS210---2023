@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Comparator;
 
-public class Q3_priorityQueue {
+public class Q3_PriorityQueue {
 	public static void main (String args[]) {  
 		PriorityQueue <String> q = new PriorityQueue<String>(new Comparator<String>() {
 			@Override

@@ -37,8 +37,9 @@ public class Q1 {
 
             // If the repeat frequency is higher
             // Or same frequency and smaller number
-            if (currentFrequency > maxFrequency ||
-            		(currentFrequency == maxFrequency && currentNumber < smallerNumber)) {
+            if (currentFrequency > maxFrequency
+            		|| (currentFrequency == maxFrequency
+            			&& currentNumber < smallerNumber)) {
             	smallerNumber = currentNumber;
                 maxFrequency = currentFrequency;
             }
@@ -47,7 +48,6 @@ public class Q1 {
      // Print out the smaller number occurs most frequently
         System.out.println(smallerNumber);
 	}
-
 }
 
 //map.getOrDefault(key, defaultValue) 

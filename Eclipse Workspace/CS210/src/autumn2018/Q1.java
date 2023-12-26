@@ -11,6 +11,7 @@ public class Q1 {
 		
 		int SIZE = Integer.parseInt(sc.nextLine()); // number of students
 		int RANK = Integer.parseInt(sc.nextLine()); // output rank
+		
 		// Create a new Student class, input its name and score
 		for(int i = 0; i < SIZE; i++) {
 			String inputName = sc.nextLine();
